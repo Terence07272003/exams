@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+        :root {
+            --primary-color: #a855f7;
+            --primary-color-dark: #9333ea;
+            --secondary-color: #ca8a04;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --extra-light: #9cc7d6;
+            --max-width: 1200px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #c2c9da;
+            z-index: 99;
+        }
+
+        .nav__content {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav .logo a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
+
+        nav .logo a:hover {
+            color: var(--primary-color-dark);
+        }
+
+        nav .checkbox {
+            display: none;
+        }
+
+        nav input {
+            display: none;
+        }
+
+        nav .checkbox i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            list-style: none;
+            transition: left 0.3s;
+        }
+
+        ul li a {
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            border-top-color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px;
+            background-color: #9cc7d6;
+        }
+
+        .image-wrapper {
+            position: relative;
+        }
+
+        img {
+            width: 1000px;
+            height: 600px;
+            margin-top: 3rem;
+            text-align: center;
+            border-radius: 1%;
+        }
+
+        .link {
+            margin-top: 1rem;
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .link a {
+            color: #444546;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 750px) {
+            nav .checkbox {
+                display: block;
+            }
+
+            ul {
+                position: absolute;
+                width: 100%;
+                height: calc(100vh - 85px);
+                left: -100%;
+                top: 85px;
+                background-color: var(--extra-light);
+                flex-direction: column;
+                justify-content: center;
+                gap: 3rem;
+            }
+
+            nav #check:checked ~ ul {
+                left: 0;
+            }
+
+            ul li a {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 10rem 1rem 5rem 1rem;
+                text-align: center;
+            }
+
+            img {
+                width: min(25rem, 90%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__content">
+            <div class="logo"><a href="#"> </a></div>
+            <label for="check" class="checkbox">
+                <i class="ri-menu-line"></i>
+            </label>
+            <input type="checkbox" name="check" id="check" />
+            <ul>
+              <li><a href="index.html"> Home</a></li>
+              <li><a href="project.html">Projects</a></li>
+              <li><a href="jobs180.html">Porfolio</a></li>
+               
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="jobs180.png" alt=" ">
+            <div class="link">
+                <a href="https://bachirameguru.jobs180.com">(>My Resume Link<)</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
